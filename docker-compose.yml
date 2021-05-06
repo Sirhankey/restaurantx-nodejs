@@ -23,6 +23,5 @@ services:
       - .:/usr/app
     network_mode: host
 
-
 volumes:
   pgdata:
