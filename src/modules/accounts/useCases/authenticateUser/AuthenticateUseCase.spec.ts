@@ -1,4 +1,4 @@
-import { AppError } from "@errors/AppError";
+import { AppError } from "@shared/errors/AppError";
 
 import { ICreateUserDto } from "../../dtos/ICreateUserDTO";
 import { UsersRepositoryInMemory } from "../../repositories/inMemory/UsersRepositoryInMemory";
