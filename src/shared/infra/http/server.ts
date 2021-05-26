@@ -6,11 +6,12 @@ import swaggerUi from "swagger-ui-express";
 
 import { AppError } from "@shared/errors/AppError";
 
-import "../typeorm";
+import createConnection from "../typeorm";
 import { router } from "./routes";
 import "@shared/container";
 import swaggerFile from "../../../swagger.json";
 
+createConnection();
 const app = express();
 
 app.use(cors());
