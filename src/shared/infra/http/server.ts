@@ -11,7 +11,7 @@ import { router } from "./routes";
 import "@shared/container";
 import swaggerFile from "../../../swagger.json";
 
-createConnection();
+createConnection("localhost");
 const app = express();
 
 app.use(cors());
