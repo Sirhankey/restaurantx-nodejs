@@ -2,6 +2,7 @@ import { getRepository, Repository, SelectQueryBuilder } from "typeorm";
 
 import { ICreateCarDTO } from "@modules/cars/dtos/ICreateCarDTO";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
+import { buildQuery, QueryOperation } from "@utils/buildQuery";
 
 import { Car } from "../entities/Car";
 
@@ -49,11 +50,15 @@ class CarsRepository implements ICarsRepository {
       .createQueryBuilder("cars")
       .where("available = :available", { available: true });
 
-    this.buildQuery<Car>(
+    buildQuery<Car>(
       [
-        { param: "brand", value: brand },
-        { param: "category_id", value: category_id },
-        { param: "name", value: name },
+        { property: "brand", value: brand, operation: QueryOperation.AND },
+        {
+          property: "category_id",
+          value: category_id,
+          operation: QueryOperation.AND,
+        },
+        { property: "name", value: name, operation: QueryOperation.AND },
       ],
       carsQuery
     );
@@ -61,27 +66,15 @@ class CarsRepository implements ICarsRepository {
     // if (brand) {
     //   carsQuery.andWhere("cars.brand = :brand", { brand });
     // }
-
     // if (name) {
     //   carsQuery.andWhere("cars.name = :name", { name });
     // }
-
     // if (category_id) {
     //   carsQuery.andWhere("cars.category_id = :category_id", { category_id });
     // }
 
     const cars = await carsQuery.getMany();
     return cars;
-  }
-
-  private buildQuery<T>(arry: any[], query: SelectQueryBuilder<T>): void {
-    arry.forEach((item) => {
-      if (item.param && item.value) {
-        query.andWhere(`${item.param} = :${item.param}`, {
-          [item.param]: item.value,
-        });
-      }
-    });
   }
 }
 
