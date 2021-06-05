@@ -48,7 +48,6 @@ O usuário responsável pelo cadastrado deve ser um usuário administrador.
 Deve ser possível cadastrar um aluguel.
 
 ** RNF **
-Deve ser possivel 
 Utilizar o multer para upload dos arquivos.
 
 ** RN **
