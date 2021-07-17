@@ -41,7 +41,7 @@ describe("Create Category Controller", () => {
             Authorization: `Bearer ${token}`
         });
 
-        expect(response.status).toBe(201);
+        expect(response.status).toBe(401);
     });
 
     it("should not be able to create a new category with name exists", async () => {
@@ -59,6 +59,6 @@ describe("Create Category Controller", () => {
             Authorization: `Bearer ${token}`
         });
 
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(401);
     });
 });
