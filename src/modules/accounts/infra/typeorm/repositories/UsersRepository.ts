@@ -1,5 +1,7 @@
 import { getRepository, Repository } from "typeorm";
 
+/* eslint-disable prettier/prettier */
+
 import { ICreateUserDto } from "@modules/accounts/dtos/ICreateUserDTO";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 
@@ -15,7 +17,6 @@ class UsersRepository implements IUsersRepository {
   async create({
     name,
     email,
-    driver_license,
     password,
     avatar,
     id,
@@ -23,7 +24,6 @@ class UsersRepository implements IUsersRepository {
     const user = this.repository.create({
       name,
       email,
-      driver_license,
       password,
       avatar,
       id,

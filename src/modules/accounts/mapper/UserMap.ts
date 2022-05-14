@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import { IUserResponseDTO } from "../dtos/IUserResponseDTO";
 import { User } from "../infra/typeorm/entities/User";
 import { classToClass } from "class-transformer";
@@ -8,7 +10,6 @@ class UserMap {
         name,
         id,
         avatar,
-        driver_license,
         avatar_url
     }: User): IUserResponseDTO {
         const user = classToClass({
@@ -16,7 +17,6 @@ class UserMap {
             name,
             id,
             avatar,
-            driver_license,
             avatar_url
         });
         return user;

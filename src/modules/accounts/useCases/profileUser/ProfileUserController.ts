@@ -1,5 +1,7 @@
+/* eslint-disable prettier/prettier */
 import { Request, Response } from "express";
 import { container } from "tsyringe";
+
 import { ProfileUserUseCase } from "./ProfileUserUseCase";
 
 class ProfileUserController {
@@ -9,7 +11,6 @@ class ProfileUserController {
         const user = await profileUserUseCase.execute(id);
         return response.json(user);
     }
-
 }
 
 export { ProfileUserController };

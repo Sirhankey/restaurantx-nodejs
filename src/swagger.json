@@ -1,11 +1,11 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "RentalX Documentation",
-        "description": "This is an API Rent",
+        "title": "RestaurantX NodeJs Documentation",
+        "description": "RestaurantX NodeJs Documentation",
         "version": "1.0.0",
         "contact": {
-            "email": "lucas@teste.com"
+            "email": "dvmguimaraes@gmail.com"
         }
     },
     "paths": {

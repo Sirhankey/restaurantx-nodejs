@@ -1,6 +1,16 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
+/* eslint-disable prettier/prettier */
+
+import {
+    Column,
+    CreateDateColumn,
+    Entity,
+    JoinColumn,
+    ManyToOne,
+    PrimaryColumn,
+} from "typeorm";
+import { v4 as uuidv4 } from "uuid";
+
 import { User } from "./User";
-import { v4 as uuidv4 } from 'uuid';
 
 @Entity("users_tokens")
 class UserTokens {
@@ -30,4 +40,4 @@ class UserTokens {
     }
 }
 
-export { UserTokens }
+export { UserTokens };
